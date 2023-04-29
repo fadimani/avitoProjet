@@ -1,0 +1,48 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="article_form">
+        <%= form_for(@article) do |f| %>
+
+          <div class="col-sm-8">
+            <%= f.text_field :titre, rows: 10, class: "form-control", placeholder: "Titre" %>
+          </div>
+
+          <div class="col-sm-8">
+            <%= f.select  :category, ["avito market","avito vehicule","avito immobiler","avito entreprise"] , rows: 10, class: "form-control", placeholder: "Category" %>
+          </div>
+
+          <div class="col-sm-8">
+            <%= f.text_field :adresse, rows: 10, class: "form-control", placeholder: "Adresse" %>
+          </div>
+
+          <div class="col-sm-8">
+            <%= f.telephone_field :tel, rows: 10, class: "form-control", placeholder: "Tel" %>
+          </div>
+
+          <div class="col-sm-8">
+            <%= f.select :etat,["neuf","comme neuf","usee"], rows: 10, class: "form-control", placeholder: "Etat" %>
+          </div>
+
+          <div class="col-sm-8">
+            <%= f.text_field :prix, rows: 10, class: "form-control", placeholder: "Prix" %>
+          </div>
+
+          <div class="col-sm-8">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "description" %>
+          </div>
+
+          <%= f.submit "Soumettre", class: "btn btn-primary" %>
+        <% end %>
+      </section>
+    </aside>
+  </div>
+
+
+<% else
+     flash[:danger] = "You have te be logged in to depose un annonce"
+     controller.redirect_to login_url
+%>
+
+
+<% end %>

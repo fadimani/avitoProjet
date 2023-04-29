@@ -1,0 +1,74 @@
+
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <h3>category: avito market</h3>
+  <% articles =Article.where(category: "avito market") %>
+  <%# articles = Article.all %>
+  <% articles.each do |article| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= article.titre %>&nbsp &nbsp &nbsp<%= article.category %>&nbsp &nbsp &nbsp<%= article.adresse %>&nbsp &nbsp &nbsp<%= article.prix %></h3>
+      </div>
+      <div class="panel-body">
+        <%= article.description %>
+        <br>
+        <%= link_to "see more", article %>
+      </div>
+    </div>
+  <% end %>
+
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <h3>category: avito immobiler</h3>
+  <% articles =Article.where(category: "avito immobiler") %>
+  <%# articles = Article.all %>
+  <% articles.each do |article| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= article.titre %>&nbsp &nbsp &nbsp<%= article.category %>&nbsp &nbsp &nbsp<%= article.adresse %>&nbsp &nbsp &nbsp<%= article.prix %></h3>
+      </div>
+      <div class="panel-body">
+        <%= article.description %>
+        <br>
+        <%= link_to "see more", article %>
+      </div>
+    </div>
+  <% end %>
+
+
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <h3>category: avito entreprise     </h3>
+  <% articles =Article.where(category: "avito entreprise") %>
+  <%# articles = Article.all %>
+  <% articles.each do |article| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= article.titre %>&nbsp &nbsp &nbsp<%= article.category %>&nbsp &nbsp &nbsp<%= article.adresse %>&nbsp &nbsp &nbsp<%= article.prix %></h3>
+      </div>
+      <div class="panel-body">
+        <%= article.description %>
+        <br>
+        <%= link_to "see more", article %>
+      </div>
+    </div>
+  <% end %>
+
+
+
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <h3>category: avito vehicule</h3>
+  <% articles =Article.where(category: "avito vehicule") %>
+  <%# articles = Article.all %>
+  <% articles.each do |article| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= article.titre %>&nbsp &nbsp &nbsp<%= article.category %>&nbsp &nbsp &nbsp<%= article.adresse %>&nbsp &nbsp &nbsp<%= article.prix %></h3>
+      </div>
+      <div class="panel-body">
+        <%= article.description %>
+        <br>
+        <%= link_to "see more", article %>
+      </div>
+    </div>
+  <% end %>
+
+
+
