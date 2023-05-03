@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/aide'
   get 'pages/contact'
+  root to: 'pages#index', as: 'home'
+  delete 'logout' => 'sessions#destroy', as: :logout
+  get 'login' => 'sessions#new', as: :login
 
   get 'home' => 'pages#index'
   get 'about' => 'pages#about'
