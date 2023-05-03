@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="sc-1lz4h6h-0 hNbKvD">
-            <%= form_for(:session, url: login_url, :html => {class: "hUEFey", role: "form", name:"LoginForm"}) do |f| %>
+            <%= form_for(:session, url: login_path, :html => {class: "hUEFey", role: "form", name:"LoginForm"}) do |f| %>
           <!--<form name="LoginForm" class="sc-isyk1s-4 hUEFey">-->
               <p class="sc-1x0vz2r-0 jsrimE">Entrez votre e-mail et mot de passe</p>
               <div class="sc-1t6bwmy-0 gswIJF">
@@ -90,7 +90,8 @@
                 </div>
               </div>
               <span class="sc-isyk1s-5 kQntCC">Mot de passe oublié ?</span>
-            </form>
+
+
           </div>
           <div class="sc-1lz4h6h-0 hNbKvD">
             <%# f.submit "Se connecter", class: "hWmiT dBNPnL" %>
@@ -98,6 +99,7 @@
             <%= f.submit "Se connecter", class:"fhWmiT dBNPnL"%>
           </div>
             <% end %>
+            </form>
           <div class="sc-1lz4h6h-0 hNbKvD">
             <div class="sc-isyk1s-6 hYdXqQ">Pas encore inscrit? <%= link_to "S'inscrire gratuitement.", signup_path, class:"sldoLDZ" %>
             </div>
