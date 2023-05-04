@@ -1,6 +1,6 @@
 class Utilisateur < ApplicationRecord
-  has_secure_password
   has_many :articles, dependent: :destroy
+  has_one :city
 
   validates :nom, presence: true, length: { maximum: 50 }
   # @example.com
