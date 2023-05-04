@@ -33,7 +33,8 @@ class UtilisateursController < ApplicationController
   end
 
   def utilisateur_params
-    params.require(:utilisateur).permit(:nom,:email,:password,:password_confirmation)
+    params.require(:utilisateur).permit(:nom, :email, :password, :password_confirmation, :city, :phone)
+
   end
 
   def edit
