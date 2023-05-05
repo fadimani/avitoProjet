@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2023_05_04_191614) do
     t.string "adresse"
     t.string "tel"
     t.string "etat"
-    t.string "prix"
+    t.integer "prix"
     t.text "description"
     t.integer "utilisateur_id", null: false
     t.datetime "created_at", precision: 6, null: false

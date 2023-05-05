@@ -29,7 +29,15 @@ class ArticlesController < ApplicationController
 
   def search
     key = "%#{params[:key]}%"
-    @articles = Article.where("titre LIKE ? or description LIKE ?", key,key)
+    category = "%#{params[:category]}%"
+    city = "%#{params[:city]}%"
+
+    # @articles = Article.where("titre LIKE ? or description LIKE ?", key,key)
+
+    @articles = Article.where("category LIKE ? AND adresse LIKE ?",category,city)
+
+    @articles = @articles.where("titre LIKE ? or description LIKE ?", key,key)
+
   end
 
   def show
