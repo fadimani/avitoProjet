@@ -3,27 +3,34 @@
 <!--  <h3>Articles (<%#= @utilisateur.articles.count %>)</h3>-->
 
 
-    <% articles = @utilisateur.articles %>
+  <% articles = @utilisateur.articles %>
+
+
+  <% articles.each do |article| %>
+
+
 
       <div class="sc-gsib73-1 cywyZq">
-        <% articles.each do |article| %>
+
         <div class="sc-1b04v9q-0 eaIpCJ">
 
           <div class="sc-1b04v9q-2 cBvOsc">
 
             <div class="sc-1b04v9q-3 fOLRCQ">
 
+
+
+
               <div class="sc-1b04v9q-4 eKPjXz">
                 <div data-step="1" class="sc-1b04v9q-5 oQuvs">
                   <div class="sc-1b04v9q-7 bwhNoe"></div>
                   <div class="sc-1b04v9q-6 flBVsn">
-                    <img src="/phoenix-assets/imgs/account/no-image-placeholder.jpg" class="sc-e64a09-1 jOJhKR"></div>
-
+                    <img src="" class="sc-e64a09-1 jOJhKR" alt="pic not here">
+                  </div>
                 </div>
                 <div class="sc-1b04v9q-8 Rldtu">
                   <div class="sc-1b04v9q-9 cPtMRz">
-                    <span class="sc-1x0vz2r-0 eaMojD sc-1b04v9q-10 irjVbK" font-weight="500"><%= article.prix %><span> DH</span></span>
-
+                    <span class="sc-1x0vz2r-0 eaMojD sc-1b04v9q-10 irjVbK" ><%= article.prix %><span> DH</span></span>
                     <%= article.description %>
                     <span class="sc-1x0vz2r-0 fTKljZ sc-1b04v9q-10 irjVbK"><%= article.titre %></span>
                   </div>
@@ -48,42 +55,56 @@
                 </div>
               </div>
 
+
+
+
               <div class="sc-4g43f0-8 gHlKcC"></div>
 
-              <div class="sc-4g43f0-4 brXRHj">
-                <button class="sc-4g43f0-5 BCcTG">
-                  <svg class="av-icon" height="22" width="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="EditLineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;">
-                    <title id="EditLineTitleID">EditLine Icon</title>
-                    <path fill-rule="evenodd" d="M14.232 5.768a2.5 2.5 0 013.536 0l.707.707a2.5 2.5 0 010 3.535l-8.132 8.132H7.101a1 1 0 01-1-1V13.9l8.131-8.132zm2.122 1.414l.707.707a.5.5 0 010 .707L16 9.656l-1.414-1.413 1.06-1.061a.5.5 0 01.708 0zm-1.768 3.89l-5.071 5.07H8.1v-1.414l5.07-5.071 1.415 1.414z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="sc-1x0vz2r-0 kACdco sc-4g43f0-6 bJtaMI">Modifier</span>
-                </button>
-              </div>
 
-              <div class="sc-4g43f0-4 brXRHj">
 
-                <%= link_to article_path(article), method: :delete, data: { confirm: "confirmer" }, class: "sc-4g43f0-5 BCcTG" do %>
-                  <svg class="av-icon" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="Delete2LineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;">
-                    <title id="Delete2LineTitleID">Delete2Line Icon</title>
-                    <path fill-rule="evenodd" d="M19 24H5a2 2 0 01-2-2V5H2V3h6V1.5C8 .673 8.673 0 9.5 0h5c.825 0 1.5.671 1.5 1.5V3h6v2h-1v17a2 2 0 01-2 2zm0-19H5v16.5a.5.5 0 00.5.5h13a.5.5 0 00.5-.5V5zm-9 4a1 1 0 00-2 0v9a1 1 0 002 0V9zm6 0a1 1 0 00-2 0v9a1 1 0 002 0V9zm-2-7h-4v1h4V2z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="sc-1x0vz2r-0 kACdco sc-4g43f0-6 bJtaMI">Supprimer</span>
-                <% end %>
 
-              </div>
+
+              <%= link_to "modifier", edit_article_path(article), class: "sc-4g43f0-4 brXRHj sc-4g43f0-5 BCcTG sc-1x0vz2r-0 kACdco sc-4g43f0-6 bJtaMI" %>
+
+
+
+
+<!--              <div class="sc-4g43f0-4 brXRHj">-->
+
+                <%#= link_to article_path(article), method: :delete, data: { confirm: "confirmer" }, class: "sc-4g43f0-5 BCcTG" do %>
+<!--                  <svg class="av-icon" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="Delete2LineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;">-->
+<!--                    <title id="Delete2LineTitleID">Delete2Line Icon</title>-->
+<!--                    <path fill-rule="evenodd" d="M19 24H5a2 2 0 01-2-2V5H2V3h6V1.5C8 .673 8.673 0 9.5 0h5c.825 0 1.5.671 1.5 1.5V3h6v2h-1v17a2 2 0 01-2 2zm0-19H5v16.5a.5.5 0 00.5.5h13a.5.5 0 00.5-.5V5zm-9 4a1 1 0 00-2 0v9a1 1 0 002 0V9zm6 0a1 1 0 00-2 0v9a1 1 0 002 0V9zm-2-7h-4v1h4V2z" clip-rule="evenodd"></path>-->
+<!--                  </svg>-->
+<!--                  <span class="sc-1x0vz2r-0 kACdco sc-4g43f0-6 bJtaMI">Supprimer</span>-->
+
+                <%# end %>
+
+<!--              </div>-->
+
+              <% if utilisateur_courant.nom == @utilisateur.nom %>
+                <%= link_to "delete", article, method: :delete, data: { confirm: "confirmer" }, class: "sc-4g43f0-5 BCcTG sc-1x0vz2r-0 kACdco sc-4g43f0-6 bJtaMI" %>
+              <% end %>
 
               <%= link_to "see more", article %>
+
 
 
             </div>
 
 
           </div>
-          <div class="sc-1b04v9q-13 cJvwGR"></div>
+
+
+
         </div>
+
       </div>
-      </div>
-    <% end %>
+
+  <% end %>
+
+
+
 <% else %>
   <h3>no articles. wanna post some?</h3>
 <% end %>

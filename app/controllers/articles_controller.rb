@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
-  before_action :authenticate, :only => [:create, :destroy]
-
+  before_action :authenticate, :only => [:create, :destroy, :edit, :update]
+  before_action :bon_utilisateur, :only => [:edit, :update]
   def new
     @page_name = 'annoncer'
     @article = Article.new
@@ -24,6 +24,20 @@ class ArticlesController < ApplicationController
     redirect_to utilisateur_path(utilisateur_courant)
   end
 
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if@article.update(article_params)
+      flash[:success] = "article Actualise!"
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
 
 
 

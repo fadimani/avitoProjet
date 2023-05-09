@@ -1,0 +1,167 @@
+#encoding: ISO-8859-1
+
+<% if logged_in? %>
+  <main class="sc-h7akbr-1 erNWLq">
+    <div class="sc-1gfa0w0-0 eEIzaP">
+      <div class="sc-1gfa0w0-0 sc-phien2-0 eEIzaP kMLYmo">
+        <div class="sc-1baqrvp-0 ffpWTv">
+          <div class="sc-1lz4h6h-0 bvSZRj">
+            <div class="sc-8pgui9-0 jcJhQs">
+              <%= form_for(@article) do |f| %>
+
+                <section class="sc-1xt0dr4-0 kdoaiu">
+                  <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Information de l'annonce</p>
+                  <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Une annonce avec un prix exacte et une description bien detaille a 10 fois plus de visibilite </p>
+                  <div class="sc-1baqrvp-0 sc-phien2-1 ffpWTv dntnru">
+                    <div class="sc-1lz4h6h-0 gmaqSf sc-phien2-2 dNrtzu">
+                      <div class="sc-1t6bwmy-0 gswIJF">
+                        <label for="price" class="sc-1t6bwmy-1 bTPdgy">
+                          <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                            <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+
+                              <%= image_tag 'prix.svg', width: '24px', height: '24px' %>
+                            </div>
+                          </div>Prix</label>
+                        <%= f.text_field :prix, rows: 10, class: "jwHWvh", placeholder: "0", min:1 %>
+
+                      </div>
+                    </div>
+                    <div class="sc-1lz4h6h-0 hNbKvD sc-phien2-2 dNrtzu">
+                      <div class="sc-1t6bwmy-0 gswIJF">
+                        <label for="title" class="sc-1t6bwmy-1 bTPdgy">
+                          <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                            <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                              <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                                <%= image_tag 'titre.svg', width: '24px', height: '24px' %>
+                              </div>
+                            </div>
+                          </div>
+                          <span>*</span>Titre de l'annonce</label>
+                        <%= f.text_field :titre, rows: 10, class: "inZaZn", placeholder: "Titre de l'annonce" %>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sc-1lz4h6h-0 hNbKvD sc-phien2-2 dNrtzu">
+                    <div class="sc-1t6bwmy-0 gswIJF">
+                      <label for="description" class="sc-1t6bwmy-1 bTPdgy">
+                        <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                          <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                            <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                              <%= image_tag 'teste.svg', width: '24px', height: '24px' %>
+                            </div>
+                          </div>
+                        </div>
+                        <span>*</span>Texte de l'annonce</label>
+                      <%= f.text_area :description, rows: 10, class: "FuhCN", placeholder: "description" %>
+
+
+                    </div>
+                  </div>
+
+                  <div>
+                  </div>
+                </section>
+
+                <section class="sc-1xt0dr4-0 kdoaiu">
+                  <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Qu'annoncez-vous aujourd'hui ?</p>
+                  <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Grâce à ces informations les acheteurs peuvent trouver votre annonce plus facilement</p>
+                  <div class="sc-1baqrvp-0 sc-phien2-1 ffpWTv dntnru">
+                    <div class="sc-1lz4h6h-0 hNbKvD sc-phien2-2 dNrtzu">
+                      <div class="sc-1t6bwmy-0 gswIJF">
+                        <label class="sc-1t6bwmy-1 bTPdgy"><span>*</span>Categorie</label>
+                        <%= f.select  :category, ["Avito Market","Avito Vehicule","Avito Immobiler","Avito Entreprise"] , rows: 10, class: "eqDIbX", placeholder: "Category" %>
+
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="sc-1xt0dr4-0 kdoaiu">
+
+                  <div class="sc-1baqrvp-0 sc-phien2-1 ffpWTv dntnru">
+                    <div class="sc-1lz4h6h-0 hNbKvD sc-phien2-2 dNrtzu">
+                      <div class="sc-1t6bwmy-0 gswIJF">
+
+                        <div class="sc-jmnnoq-0 jOJvYZ"></div>
+
+                        <div class="sc-1lz4h6h-0 hNbKvD sc-phien2-2 dNrtzu">
+                          <div class="sc-1t6bwmy-0 gswIJF">
+                            <label for="address" class="sc-1t6bwmy-1 bTPdgy">
+                              <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                                <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                                  <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                                    <%= image_tag 'local.svg', width: '24px', height: '24px' %>
+                                  </div>
+                                </div></div>Adresse du bien</label>
+                            <div tabindex="-1" class="sc-1i9i8oo-2 fnFWbk">
+                              <div class="eAIOkm"></div>
+                              <%= f.text_field :adresse, rows: 10, class: "eJkEOI", placeholder: "Adresse du bien" %>
+
+                              <div class="sc-1i9i8oo-3 fauTXP"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+                <section class="sc-1xt0dr4-0 kdoaiu"><p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Vos coordonnees</p>
+                  <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Les acheteurs peuvent vous contacter directement sur votre numero de telephone.</p>
+                  <div class="sc-1baqrvp-0 sc-phien2-1 ffpWTv dntnru">
+                    <div class="sc-1lz4h6h-0 gmaqSf sc-phien2-2 dNrtzu">
+                      <div class="sc-1t6bwmy-0 gswIJF">
+                        <label for="phone" class="sc-1t6bwmy-1 bTPdgy">
+                          <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                            <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                              <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                                <%= image_tag 'tel.svg', width: '24px', height: '24px' %></div>
+                            </div>
+                          </div>
+                          <span>*</span>Numero de telephone</label>
+                        <div tabindex="-1" class="sc-1i9i8oo-2 fnFWbk">
+                          <div class="sc-1i9i8oo-3 eAIOkm"></div>
+                          <%= f.telephone_field :tel, rows: 10, class: "eJkEOI", placeholder: "Numero de telephone" %>
+
+                          <div class="sc-1i9i8oo-3 fauTXP"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+
+                <div class="sc-1h5cb0d-0 bXjncD">
+                  <div class="sc-1gfa0w0-0 sc-1h5cb0d-1 eEIzaP kDKpZc">
+                    <%= f.submit "Soumettre", class: "eQrQgT dBNPnL" %>
+
+                    <div class="sc-1h5cb0d-2 ePfciO">
+                      <div width="32" height="32" class="sc-wdregf-0 bvTkd">
+                        <svg class="av-icon" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="BulbTitleID" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255); stroke-width: 0;">
+                          <title id="BulbTitleID">Bulb Icon</title>
+                          <path d="M16.392 4.308A6.16 6.16 0 0012 2.5a6.181 6.181 0 00-6.195 6.196c0 1.805.692 3.494 1.897 4.633l.169.158c.697.652 1.651 1.545 1.651 2.334v.929a.62.62 0 00.62.62h.929a.31.31 0 00.31-.31v-4.538a.31.31 0 00-.199-.289 5.063 5.063 0 01-1.013-.556.618.618 0 11.72-1.006c.286.202.838.503 1.111.503.274 0 .825-.301 1.113-.503a.62.62 0 01.719 1.006 5.064 5.064 0 01-1.013.555.31.31 0 00-.2.29v4.538a.31.31 0 00.31.31h.93a.62.62 0 00.62-.62v-.93c0-.77.943-1.662 1.632-2.314l.19-.18c1.24-1.184 1.895-2.787 1.895-4.63a6.163 6.163 0 00-1.804-4.388zM13.86 18.196h-3.717a.62.62 0 000 1.239h3.717a.62.62 0 000-1.24zm-.622 2.064H10.76a.62.62 0 100 1.24h2.478a.62.62 0 100-1.24z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="Toastify"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+<% else
+     flash[:danger] = "You have te be logged in to depose un annonce"
+     controller.redirect_to login_url
+%>
+<% end %>
+
+
+
+
